@@ -15,27 +15,27 @@ During initialization it takes arguments:
 
 #### Methods
 
-- **set_dates(self, date)** - method that sets the dates for the class based on the given **date** parameter.
-  If **date** is a string, it is converted to a datetime object.
-   The now and **day_to_del** class variables are also set based on the num_of_days parameter.
+- **`set_dates(self, date)`** - method that sets the dates for the class based on the given **`date`** parameter.
+  If **`date`** is a string, it is converted to a datetime object.
+   The now and **`day_to_del`** class variables are also set based on the num_of_days parameter.
 
-- **del_from_BQ(self, source, date)** - method that deletes data from the BigQuery table for the given **source** and **date**.
+- **`del_from_BQ(self, source, date)`** - method that deletes data from the BigQuery table for the given **`source`** and **`date`**.
 It take two args:
     - source: source of information name tag ( [list of name tags](#implemented-api-sources) )
     - date: `'YYYY-mm-dd'`
 
-- **fill_day_from_BQ(self, source)** - method that fills a day's worth of data in the BigQuery table for the given **source**.
+- **`fill_day_from_BQ(self, source)`** - method that fills a day's worth of data in the BigQuery table for the given **`source`**.
  The data is copied from the previous day. It take arg: 
     - source: source of information name tag ( [list of name tags](#implemented-api-sources) )
 
-- **restore_table(self, first_day)** - method that restores the BigQuery table with data from a given **first_day**
- for the number of days specified by the **num_of_days** parameter.
+- **`restore_table(self, first_day)`** - method that restores the BigQuery table with data from a given **`first_day`**
+ for the number of days specified by the **`num_of_days`** parameter.
 
-- **daily_update(self)** - method that updates the data in the BigQuery table for all implemented sources.
+- **`daily_update(self)`** - method that updates the data in the BigQuery table for all implemented sources.
 
-- **ebc_source_update(self)** - method that updates the data in the BigQuery table with data from the European Central Bank (ECB) API.
+- **`ebc_source_update(self)`** - method that updates the data in the BigQuery table with data from the European Central Bank (ECB) API.
 
-- **fci_source_update(self)** - method retrieves currency exchange rate data from the Free Currency API and stores it in a Google BigQuery table.
+- **`fci_source_update(self)`** - method retrieves currency exchange rate data from the Free Currency API and stores it in a Google BigQuery table.
 
 ### Implemented APIs
 All implemented api functions need to have specific name format: *`"\<source\>_source_update"`*
@@ -61,8 +61,8 @@ Class API have two methods:
 
 
 
-#### Table Schema
-**`salesmore-371913.recruitment.exchange_rate`** table definition:
+#### BigQuery Table Schema
+Table definition:
 
 | column name    | type      | description|
 |----------------|-----------|------------|
