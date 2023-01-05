@@ -47,10 +47,14 @@ All implemented api functions need to have specific name format: *`"\<source\>_s
 - fcapi
 
 ## API class
-
+It have fucntion used in `simple_api.py`, this file run API which has one endpoint: `/rate/<curr>/<date>/<value>` which get EXR for specific time, amount and currency.
+ It takes three parameters:
+- `curr` 3 sign currency code eg. EUR, USD, PLN
+- `date` of EXR data, date should be in format `YYYY-mm-dd`
+- `value` amount of money to be converted eg. 1; 1.3
+ 
+ #### Methods
 Class API have two methods:
-
-**Class `API`**:
 - **`count_rate(curr, value, date, table_name, credentials)`** - static method that returns an array of
  calculated values for the given currency `curr`, value `value`, date `date`,
   and table name `table_name` in BigQuery using `credentials`.
